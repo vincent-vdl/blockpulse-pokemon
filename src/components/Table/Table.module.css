@@ -1,0 +1,15 @@
+.Table,
+.Table td {
+  border: 1px solid #333;
+}
+
+.TableRowSelected {
+  background-color: green;
+}
+
+.Table thead,
+.Table tfoot {
+  background-color: #333;
+  color: #fff;
+}
+

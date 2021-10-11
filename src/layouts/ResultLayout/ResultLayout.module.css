@@ -1,0 +1,8 @@
+.ResultLayout {
+  display: flex;
+  justify-content: center;
+}
+
+.ResultLayout__Grid {
+  flex-wrap: wrap;
+}
