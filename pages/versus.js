@@ -26,8 +26,8 @@ function Versus({ player, computer }) {
 }
 
 Versus.propTypes = {
-  player: PropTypes.any,
-  computer: PropTypes.any,
+  player: PropTypes.object,
+  computer: PropTypes.object,
 };
 
 export async function getServerSideProps({ query }) {
