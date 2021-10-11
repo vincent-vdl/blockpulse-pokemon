@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import usePokemon from '../src/lib/usePokemon';
 import MainLayout from '../src/layouts/MainLayout';
@@ -9,8 +8,6 @@ const GRID_MODE = 'GRID';
 const LIST_MODE = 'LIST';
 
 function Home() {
-  const router = useRouter();
-
   const [mode, setMode] = useState(LIST_MODE);
   const [team, setTeam] = useState([]);
   const [isVersus, setIsVersus] = useState(false);
@@ -39,11 +36,9 @@ function Home() {
       ids[Math.floor(Math.random() * ids.length)],
       ids[Math.floor(Math.random() * ids.length)],
       ids[Math.floor(Math.random() * ids.length)],
-    ];
-    router.push({
-      pathname: '/versus',
-      query: { player: team.join('-'), computer: computerTeam.join('-') },
-    });
+    ].join('-');
+    const playerTeam = team.join('-');
+    window.open(`/versus?player=${playerTeam}&computer=${computerTeam}`, '_blank');
   };
 
   useEffect(() => {

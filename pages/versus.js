@@ -12,7 +12,16 @@ function Versus({ player, computer }) {
   }, [computer, player]);
 
   return (
-    <ul>{moves.map((move) => <li key={move}>{move}</li>)}</ul>
+    <div>
+      <h2>
+        {Object.values(player).map((p) => p.name).join(', ')}
+        {' '}
+        VS
+        {' '}
+        {Object.values(computer).map((p) => p.name).join(', ')}
+      </h2>
+      <ul>{moves.map((move) => <li key={move}>{move}</li>)}</ul>
+    </div>
   );
 }
 
